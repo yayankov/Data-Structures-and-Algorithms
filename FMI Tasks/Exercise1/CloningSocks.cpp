@@ -1,71 +1,37 @@
-#include<iostream>
-#include<string>
-#include<cmath>
+#include <iostream>
+
 using namespace std;
 
 int main()
 {
-    int n;
-    cin>>n;
-    int a[n];
-    for(int i=0; i<n; i++)
+    int T;
+    cin >> T;
+    long long sum;
+    int arr[T][2];
+    for(int i=0; i<T; i++)
     {
-        cin>>a[i];
+        for(int j=0; j<2; j++)
+        {
+            cin >> arr[i][j];
+        }
     }
-    int tempS=0;
-    int S=0;
-    int best2=0;
-    int best=0;
-    int road=0;
-    int road2=0;
-    for(int i=0; i<n; i++)
+    for(int i=0; i<T; i++)
     {
-      /*  if(best< a[i)+i )
+        sum = arr[i][0] + arr[i][1];
+        if(arr[i][0] >= arr[i][1]-1 && sum%2 == 1 && arr[i][0] >= 0 && arr[i][1] <= 1000000000 && arr[i][1] > 1)
         {
-            best=a[i];
-            cout<<" best:"<<best<<endl;
-        }
-        if(best2<(a[i]+abs(i-road)))
+            cout<<"yes";
+        } else if( arr[i][1] == 1 && arr[i][0] == 0)
         {
-            best2=a[i];
-            road2=abs(i-road);
-        cout<<" best2:"<<best2<<endl;
-
-        cout<<" road:"<<road2<<endl;
-
-        }
-        if(best>best2)
-        {
-            tempS=best*road2;
+            cout << "yes";
         }
         else
         {
-            tempS=best2*road2;
-
+            cout << "no";
         }
-        if(S<tempS)
-        {
-            S=tempS;
-        }*/
-
-        for(int j=0;j<n;j++)
-        {
-            road=abs(i-j);
-            if(a[i]>a[j])
-            {
-                tempS=a[j]*road;
-            }
-            else{
-                tempS=a[i]*road;
-            }
-            if(S<tempS)
-            {
-                S=tempS;
-            }
-        }
+    cout << endl;
 
     }
-    cout<<S;
 
     return 0;
 }
