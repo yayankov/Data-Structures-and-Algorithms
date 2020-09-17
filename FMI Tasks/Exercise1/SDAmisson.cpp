@@ -3,28 +3,28 @@ using namespace std;
 int main()
 {
     int M;
-    cin>>M;
+    cin >> M;
     int N;
-    cin>>N;
+    cin >> N;
     int A[N];
-    for(int i=0;i<N;i++)
+    for(int i=0; i<N; i++)
     {
-        cin>>A[i];
+        cin >> A[i];
     }
-    long long ctrPlus=0;
-    long long ctrMinus=0;
-    for(int i=0;i<N;++i)
+    long long ctrPlus = 0;
+    long long ctrMinus = 0;
+    for(int i=0; i<N; ++i)
     {
-        if(A[i]>M)
+        if(A[i] > M)
         {
-            while(A[i]>M)
+            while(A[i] > M)
             {
                 ctrPlus++;
                 A[i]--;
             }
-        } else if(A[i]<M)
+        } else if(A[i] < M)
         {
-            while(A[i]<M)
+            while(A[i] < M)
             {
                 ctrMinus--;
                 A[i]++;
@@ -32,11 +32,11 @@ int main()
         }
 
     }
-    if(ctrPlus+ctrMinus>=0)
+    if(ctrPlus+ctrMinus >= 0)
         {
-          cout<<"yes";
+          cout << "yes";
         }
-    else cout<<"no";
+    else cout << "no";
     return 0;
 }
 
