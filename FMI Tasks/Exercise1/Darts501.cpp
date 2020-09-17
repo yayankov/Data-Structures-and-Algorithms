@@ -20,11 +20,11 @@ int main()
     for(int k=0; k<21; k++)
     {
         arrow1 = allPossible[k];
-        if(arrow1>goal)
+        if(arrow1 > goal)
         {
             break;
         }
-        if( arrow1 == goal )ctr++;
+        if(arrow1 == goal) ctr++;
         for(int i=0; i<63; i++)
         {
             arrow2 = allCombination[i] + allPossible[k];
